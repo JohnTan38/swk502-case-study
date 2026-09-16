@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 30% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 200 90% 36%;
+    --primary-foreground: 0 0% 100%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 25% 30%;
+    --border: 215 20% 75%;
+  }
+}
+
+body {
+  color: #090d16;
+  background-color: #FAF9F6;
+  background-image:
+    url('/images/page-bg.svg'),
+    radial-gradient(circle at 100% 15%, rgba(186, 215, 242, 0.35) 0%, rgba(214, 232, 247, 0.2) 20%, rgba(250, 249, 246, 0) 60%),
+    radial-gradient(circle at 100% 65%, rgba(200, 225, 245, 0.25) 0%, rgba(225, 238, 248, 0.12) 25%, rgba(250, 249, 246, 0) 50%),
+    linear-gradient(135deg, #FAF9F6 0%, #F6F3EB 45%, #EFE8DD 100%);
+  background-size: cover;
+  background-position: top right;
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism High-Contrast Design System */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.glass-panel-subtle {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 25px -8px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: #ffffff;
+  border-color: rgba(2, 132, 199, 0.6);
+  box-shadow: 0 18px 36px -10px rgba(2, 132, 199, 0.2), 0 0 20px rgba(56, 189, 248, 0.18);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Dark glass card for high-emphasis callouts */
+.glass-card-dark {
+  background: #090f1e;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 12px 35px -5px rgba(15, 23, 42, 0.3);
+  color: #ffffff;
+}
+
+/* Hover tile popup effect */
+.tile-popup {
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.tile-popup:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14), 0 0 20px rgba(14, 165, 233, 0.18);
+  border-color: rgba(2, 132, 199, 0.65);
+}
+
+.glass-input {
+  background: #ffffff;
+  border: 1.5px solid rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(8px);
+  color: #090d16;
+}
+
+.glass-input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 15px rgba(2, 132, 199, 0.3);
+  background: #ffffff;
+}
+
+/* High Contrast Vibrant Badges */
+.glass-badge {
+  background: rgba(224, 242, 254, 0.95);
+  border: 1px solid rgba(2, 132, 199, 0.45);
+  color: #0369a1;
+  font-weight: 700;
+}
+
+.glass-badge-gold {
+  background: rgba(254, 243, 199, 0.95);
+  border: 1px solid rgba(217, 119, 6, 0.5);
+  color: #92400e;
+  font-weight: 700;
+}
+
+.glass-badge-emerald {
+  background: rgba(209, 250, 229, 0.95);
+  border: 1px solid rgba(5, 150, 105, 0.5);
+  color: #065f46;
+  font-weight: 700;
+}
+
+.glass-badge-rose {
+  background: rgba(255, 228, 230, 0.95);
+  border: 1px solid rgba(225, 29, 72, 0.5);
+  color: #9f1239;
+  font-weight: 700;
+}
+
+/* Ambient glow orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(240, 235, 225, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(70, 110, 150, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 75, 120, 0.9);
+}
+
